@@ -27,10 +27,8 @@ export default function Footer() {
           </Link>
         </nav>
 
-        {/* Copyright */}
-        <div className="text-xs text-gray-400 text-center md:text-right">
-          &copy; 2025 Krishna All rights reserved.
-        </div>
+        
+       
       </div>
     </footer>
   );

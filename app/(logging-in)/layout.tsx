@@ -9,7 +9,7 @@ export default async function LoggedInLayout({
   const user = await currentUser();
 
   if (!user) {
-    redirect("/sign-in");
+    redirect("/signin");
   }
 
   // No plan check here!

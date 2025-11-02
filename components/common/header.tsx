@@ -35,7 +35,7 @@ export default function Header() {
         </SignedIn>
 
         <SignedOut>
-          <NavLink href="/sign-in">Sign In</NavLink>
+          <NavLink href="/signin">Sign In</NavLink>
         </SignedOut>
       </div>
     </nav>

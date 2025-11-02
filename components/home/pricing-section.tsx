@@ -103,7 +103,7 @@ const PricingCard = ({
               className={cn(
                 "w-full rounded-full flex items-center justify-center gap-2 bg-linear-to-r from-emerald-600 to-emerald-400 hover:from-emerald-700 hover:to-emerald-500 text-white border-2 py-2 border-emerald-700",
               )}
-              onClick={() => router.push(isSignedIn ? "/upload" : "/sign-in")}
+              onClick={() => router.push(isSignedIn ? "/upload" : "/signin")}
             >
               Start for Free <ArrowRight size={18} />
             </button>
