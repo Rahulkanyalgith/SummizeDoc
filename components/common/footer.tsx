@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Branding */}
         <div className="flex items-center gap-2">
           <FileText className="w-6 h-6 text-rose-600" />
-          <span className="font-bold text-lg text-gray-900">ConciseDocs</span>
+          <span className="font-bold text-lg text-gray-900">SummizeDoc</span>
         </div>
 
         {/* Navigation */}
