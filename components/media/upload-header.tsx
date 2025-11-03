@@ -15,7 +15,7 @@ export default function UploadHeader() {
           className="relative px-6 py-2 text-base font-medium bg-white rounded-full group-hover:bg-gray-50 transition-colors"
         >
           <Sparkles className="h-6 w-6 mr-1 min-w-[28px] min-h-[28px] text-purple-600 animate-pulse" />
-          <p className="text-base">AI-Powered Content Creation</p>
+          <p className="text-base text-purple-600">AI-Powered Content Creation</p>
         </Badge>
       </MotionDiv>
       <MotionDiv
