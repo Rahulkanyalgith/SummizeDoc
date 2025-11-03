@@ -141,19 +141,8 @@ Transform your lengthy PDFs into concise, actionable summaries in seconds! Summi
 - `GET /api/uploads` - Retrieve uploaded files
 - `POST /api/payments` - Handle payment webhooks
 
-## 🎨 Customization
 
-### Changing Colors
-The app uses a blue/purple color scheme. To modify:
-- Primary colors: Edit Tailwind classes (purple-500, blue-600, indigo-600)
-- CSS variables: Update `app/globals.css` theme colors
-- Component themes: Modify color utility classes in component files
 
-### Adding New Features
-1. Create new components in `/components`
-2. Add server actions in `/helper` directory
-3. Create API routes in `/app/api`
-4. Update database schema and run migrations
 
 ## 🚢 Deployment
 
@@ -176,76 +165,14 @@ npm run build
 - **subscriptions** - User subscription records
 - **documents** - Original PDF document references
 
-## 🐛 Troubleshooting
 
-### Common Issues
-
-**Module not found error for `@langchain/community`**
-```bash
-npm install @langchain/community --legacy-peer-deps
-npm install pdf-parse@1.1.1
-```
-
-**Database connection errors**
-- Verify `DATABASE_URL` in `.env.local`
-- Ensure Neon database is accessible
-- Check network firewall settings
 
 **PDF upload fails**
 - Maximum file size is 20MB
 - Only PDF files are supported
 - Ensure UploadThing credentials are correct
 
-**Summaries not generating**
-- Verify Google Gemini API key is valid
-- Check API quota and rate limits
-- Review server logs for detailed errors
 
-## 📈 Performance Optimization
 
-- **Image Optimization**: Next.js automatic image optimization
-- **Code Splitting**: Automatic route-based code splitting
-- **Caching**: Server-side caching for summaries
-- **Database Indexing**: Optimized queries with proper indexes
-- **Vector Search**: Fast semantic search using pgvector
-
-## 🔒 Security
-
-- **Authentication**: Secure JWT tokens via Clerk
-- **Database**: Encrypted connections to Neon
-- **API**: Server-side validation and rate limiting
-- **Payments**: PCI-compliant Stripe integration
-- **Environment**: Sensitive keys stored securely
-
-## 📝 Contributing
-
-Contributions are welcome! Please follow these steps:
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🤝 Support
-
-- 📧 Email: support@summizedoc.com
-- 💬 Discord: [Join our community](https://discord.gg/summizedoc)
-- 🐛 Issues: [GitHub Issues](https://github.com/Rahulkanyalgith/SummizeDoc/issues)
-
-## 🙏 Acknowledgments
-
-- [Next.js](https://nextjs.org) - React framework
-- [Tailwind CSS](https://tailwindcss.com) - Styling
-- [Clerk](https://clerk.com) - Authentication
-- [Google Gemini](https://gemini.google.com) - AI models
-- [Neon](https://neon.tech) - Database hosting
-- [UploadThing](https://uploadthing.com) - File uploads
-- [Shadcn/ui](https://shadcn-ui.com) - UI components
-
----
 
 **Made with ❤️ by the SummizeDoc team**
