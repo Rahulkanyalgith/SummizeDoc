@@ -202,7 +202,7 @@ export async function storePdfSummaryAction({
 
   // ✅ 4. Revalidate cache for the new summary page and dashboard
   revalidatePath("/dashboard");
-  revalidatePath(`/summaries/${savedSummary.id}`);
+  revalidatePath(`/summary/${savedSummary.id}`);
 
   return {
     success: true,

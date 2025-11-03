@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import {
   generatePdfSummary,
   storePdfSummaryAction,
-} from "@/actions/upload-actions";
+} from "@/helper/upload-actions";
 import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import LoadingSkeleton from "./loading-skeleton";

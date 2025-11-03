@@ -12,7 +12,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useState, useTransition } from "react";
-import { deleteSummaryAction } from "@/actions/summary-actions";
+import { deleteSummaryAction } from "@/helper/summary-actions";
 import { toast } from "sonner";
 
 interface DeleteButtonProps {

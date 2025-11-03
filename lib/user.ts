@@ -7,52 +7,71 @@ import { User } from "@clerk/nextjs/server";
 export async function getPriceIdForActiveUser(identifier: string) {
   const sql = await getDbConnection();
 
-  // Try by email first
-  let query =
-    await sql`SELECT price_id FROM users WHERE email = ${identifier} AND status = 'active'`;
-  if (!query?.[0]) {
-    // Try by userId
-    query =
-      await sql`SELECT price_id FROM users WHERE id = ${identifier} AND status = 'active'`;
+  try {
+    // Try by email first
+    let query =
+      await sql`SELECT price_id FROM users WHERE email = ${identifier} AND status = 'active'`;
+    if (!query?.[0]) {
+      // Try by userId
+      query =
+        await sql`SELECT price_id FROM users WHERE id = ${identifier} AND status = 'active'`;
+    }
+    return query?.[0]?.price_id || null;
+  } catch (err) {
+    // If the users table doesn't exist (or any other DB error), log and return null
+    console.error("getPriceIdForActiveUser error:", err);
+    return null;
   }
-  return query?.[0]?.price_id || null;
 }
 
 export async function hasActivePlan(emailOrId: string) {
   const sql = await getDbConnection();
 
-  // Check if user has a paid plan by email
-  let query =
-    await sql`SELECT price_id,status FROM users WHERE email = ${emailOrId} AND status = 'active' AND price_id IS NOT NULL`;
+  try {
+    // Check if user has a paid plan by email
+    let query =
+      await sql`SELECT price_id,status FROM users WHERE email = ${emailOrId} AND status = 'active' AND price_id IS NOT NULL`;
 
-  if (query && query.length > 0) {
-    return true;
-  }
+    if (query && query.length > 0) {
+      return true;
+    }
 
-  // Check if user is on Free plan (active, price_id is NULL) by email
-  let freeQuery =
-    await sql`SELECT id FROM users WHERE email = ${emailOrId} AND status = 'active' AND price_id IS NULL`;
-  if (freeQuery && freeQuery.length > 0) {
-    return true;
-  }
+    // Check if user is on Free plan (active, price_id is NULL) by email
+    let freeQuery =
+      await sql`SELECT id FROM users WHERE email = ${emailOrId} AND status = 'active' AND price_id IS NULL`;
+    if (freeQuery && freeQuery.length > 0) {
+      return true;
+    }
 
-  // Fallback: check by userId
-  query =
-    await sql`SELECT price_id,status FROM users WHERE id = ${emailOrId} AND status = 'active' AND price_id IS NOT NULL`;
-  if (query && query.length > 0) {
-    return true;
-  }
-  freeQuery =
-    await sql`SELECT id FROM users WHERE id = ${emailOrId} AND status = 'active' AND price_id IS NULL`;
-  if (freeQuery && freeQuery.length > 0) {
-    return true;
-  }
+    // Fallback: check by userId
+    query =
+      await sql`SELECT price_id,status FROM users WHERE id = ${emailOrId} AND status = 'active' AND price_id IS NOT NULL`;
+    if (query && query.length > 0) {
+      return true;
+    }
+    freeQuery =
+      await sql`SELECT id FROM users WHERE id = ${emailOrId} AND status = 'active' AND price_id IS NULL`;
+    if (freeQuery && freeQuery.length > 0) {
+      return true;
+    }
 
-  return false;
+    return false;
+  } catch (err) {
+    // If the users table doesn't exist or another DB error occurs, log and return false
+    console.error("hasActivePlan error:", err);
+    return false;
+  }
 }
 
 export async function hasReachedUploadLimit(userId: string) {
-  const uploadCount = await getUserUploadCount(userId);
+  let uploadCount = 0;
+  try {
+    uploadCount = await getUserUploadCount(userId);
+  } catch (err) {
+    console.error("hasReachedUploadLimit: getUserUploadCount error:", err);
+    uploadCount = 0;
+  }
+
   const priceId = await getPriceIdForActiveUser(userId);
 
   let planId = "free";

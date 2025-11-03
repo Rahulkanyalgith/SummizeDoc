@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import DeleteButton from "@/components/summaries/delete-button";
+import DeleteButton from "@/components/summary/delete-button";
 import Link from "next/link";
 import { FileText } from "lucide-react";
 import { cn, formatFileName } from "@/lib/utils";
@@ -61,7 +61,7 @@ export default function SummaryCard({ summary }: { summary: any }) {
         <div className="absolute top-2 right-2">
           <DeleteButton summaryId={summary.id} />
         </div>
-        <Link href={`summaries/${summary.id}`} className="block px-4 sm:px-6">
+        <Link href={`summary/${summary.id}`} className="block px-4 sm:px-6">
           <div className="flex flex-col gap-3 sm:gap-4">
             <SummaryHeader
               fileUrl={summary.original_file_url}
