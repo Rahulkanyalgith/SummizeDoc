@@ -240,7 +240,7 @@ export default function UploadForm() {
 
   if (freeLimitReached) {
     return (
-      <div className="text-center text-rose-600 font-bold text-lg">
+      <div className="text-center text-purple-600 font-bold text-lg">
         You have reached your free usage limit. Please upgrade to continue.
       </div>
     );

@@ -48,7 +48,7 @@ export default async function DashboardPage() {
                 animate="visible"
                 className="text-gray-600"
               >
-                Transform your PDFs into concise, actionable insights
+                Turn lengthy PDFs into quick
               </MotionP>
             </div>
 

@@ -36,20 +36,20 @@ export default function HeroSection() {
       {/* Badge */}
       <MotionDiv
         variants={itemVariants}
-        className="relative p-[1px] overflow-hidden rounded-full bg-linear-to-r from-rose-200 via-rose-500 to-rose-800 animate-gradient-x group"
+        className="relative p-[1px] overflow-hidden rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 animate-gradient-x group"
       >
         <Badge
           variant={"secondary"}
           className="relative px-6 py-2 text-base font-medium bg-white rounded-full group-hover:bg-gray-50 transition-colors duration-200"
         >
-          <Sparkles className="h-6 w-6 mr-1 min-w-[28px] min-h-[28px] text-rose-600 animate-pulse" />
-          <p className="text-base text-rose-600">Powered by AI</p>
+          <Sparkles className="h-6 w-6 mr-1 min-w-[28px] min-h-[28px] text-purple-600 animate-pulse" />
+          <p className="text-base text-purple-600">Powered by AI</p>
         </Badge>
       </MotionDiv>
 
       {/* Title */}
       <MotionH1 variants={itemVariants} className="font-bold py-6 text-center">
-        Transform PDFs into{" "}
+        Make long PDFs short and simple,{" "}
         <span className="relative inline-block">
           <MotionSpan
             whileHover={buttonVariants}
@@ -58,7 +58,7 @@ export default function HeroSection() {
             concise
           </MotionSpan>
           <span
-            className="absolute inset-0 bg-rose-200/50 -rotate-2 rounded-lg transform -skew-y-1"
+            className="absolute inset-0 bg-purple-200/50 -rotate-2 rounded-lg transform -skew-y-1"
             aria-hidden="true"
           ></span>
         </span>{" "}
@@ -77,7 +77,7 @@ export default function HeroSection() {
       <MotionDiv variants={itemVariants} whileHover={buttonVariants}>
         <Button
           variant={"link"}
-          className="text-white mt-6 text-base sm:text-lg lg:text-xl rounded-full px-8 sm:px-10 lg:px-12 py-6 sm:py-7 lg:py-8 lg:mt-16 bg-linear-to-r from-slate-900 to-rose-500 hover:from-rose-500 hover:to-slate-900 hover:no-underline font-bold shadow-lg transition-all duration-300"
+          className="text-white mt-6 text-base sm:text-lg lg:text-xl rounded-full px-8 sm:px-10 lg:px-12 py-6 sm:py-7 lg:py-8 lg:mt-16 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 hover:no-underline font-bold shadow-lg transition-all duration-300"
           onClick={() => router.push(isSignedIn ? "/upload" : "/signin")}
         >
           <span className="flex gap-2 items-center">

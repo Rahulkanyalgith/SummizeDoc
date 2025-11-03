@@ -61,7 +61,7 @@ export function ChatInterface({ summaryId }: ChatInterfaceProps) {
           Chat With This Document
         </span>
       </h3>
-      <div className="group relative bg-linear-to-br from-gray-200/[0.08] to-gray-400/[0.03] p-4 rounded-2xl border border-gray-500/10 hover:shadow-lg transition-all h-96 overflow-y-auto">
+      <div className="group relative bg-linear-to-br from-gray-200/8 to-gray-400/3 p-4 rounded-2xl border border-gray-500/10 hover:shadow-lg transition-all h-96 overflow-y-auto">
         <div className="absolute inset-0 bg-linear-to-r from-gray-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
         <div className="relative space-y-4">
           {messages.map((msg, index) => (
@@ -89,13 +89,13 @@ export function ChatInterface({ summaryId }: ChatInterfaceProps) {
           )}
         </div>
       </div>
-      <div className="mt-4 p-3 rounded-2xl border border-gray-500/10 bg-linear-to-br from-gray-200/[0.06] to-gray-400/[0.02]">
+      <div className="mt-4 p-3 rounded-2xl border border-gray-500/10 bg-linear-to-br from-gray-200/6 to-gray-400/2">
         <form onSubmit={handleSubmit} className="flex gap-2">
           <Input
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask a question about the document..."
-            className="flex-grow"
+            className="grow"
             disabled={isLoading}
           />
           <Button type="submit" disabled={isLoading}>

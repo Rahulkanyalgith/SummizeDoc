@@ -18,14 +18,14 @@ export function SourceInfo({
   return (
     <div className="flex flex-col lg:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
       <div className="flex items-center justify-center gap-2">
-        <FileText className="h-4 w-4 text-rose-400" />
+        <FileText className="h-4 w-4 text-purple-400" />
         <span>Source: {fileName}</span>
       </div>
       <div className="flex gap-2">
         <Button
           variant={"ghost"}
           size={"sm"}
-          className="h-8 px-3 text-rose-600 hover:text-rose-700 hover:bg-rose-50"
+          className="h-8 px-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50"
           asChild
         >
           <a href={originalFileUrl} target="_black" rel="noopener noreferrer">

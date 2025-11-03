@@ -32,14 +32,14 @@ export default async function PlanBadge() {
     <Badge
       variant="outline"
       className={cn(
-        "ml-2 bg-linear-to-r from-amber-100 to-amber-200 border-amber-300 hidden lg:flex flex-row items-center",
-        !priceId && "from-red-100 to-red-200 border-red-300",
+        "ml-2 bg-gradient-to-r from-purple-100 to-purple-200 border-purple-300 hidden lg:flex flex-row items-center",
+        !priceId && "from-blue-100 to-blue-200 border-blue-300",
       )}
     >
       <Crown
         className={cn(
-          "w-3 h-3 mr-1 text-amber-600",
-          !priceId && "text-red-600",
+          "w-3 h-3 mr-1 text-purple-600",
+          !priceId && "text-blue-600",
         )}
       />
       {planName}
