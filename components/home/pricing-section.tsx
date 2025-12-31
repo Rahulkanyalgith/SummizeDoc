@@ -48,8 +48,8 @@ const PricingCard = ({
     >
       <div
         className={cn(
-          "relative flex flex-col h-full gap-4 lg:gap-8 z-10 p-8 border-[1px] border-gray-500/20 rounded-2xl",
-          id === "pro" && "border-purple-500 gap-5 border-2",
+            "relative flex flex-col h-full gap-4 lg:gap-8 z-10 p-8 rounded-2xl glass-panel shadow-xl",
+            id === "pro" && "border-2 border-purple-400 shadow-2xl",
         )}
       >
         <MotionDiv
@@ -124,6 +124,7 @@ export default function PricingSection() {
       className="relative overflow-hidden "
       id="pricing"
     >
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50 to-white" aria-hidden="true" />
       <div className="py-12 lg:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12">
         <MotionDiv
           variants={itemVariants}

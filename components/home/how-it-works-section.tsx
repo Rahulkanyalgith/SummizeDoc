@@ -29,8 +29,9 @@ const steps: Step[] = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="relative overflow-hidden bg-gray-50">
-      <div className="py-12 lg:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-indigo-50/40 to-white" aria-hidden="true" />
+      <div className="py-12 lg:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl"
@@ -97,7 +98,7 @@ export default function HowItWorksSection() {
 
 function StepItem({ icon, label, description }: Step) {
   return (
-    <div className="relative p-6 rounded-2xl bg-white/5 backdrop-blur-xs border border-white/10 hover:border-purple-500/50 transition-colors group w-full">
+    <div className="relative p-6 rounded-2xl glass-panel border border-white/60 shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all group w-full">
       <div className="flex flex-col gap-4 h-full">
         <div className="flex items-center justify-center h-24 w-24 mx-auto rounded-2xl bg-gradient-to-br from-purple-500/10 to-transparent group-hover:from-purple-500/20 transition-colors">
           <div className="text-purple-500">{icon}</div>
